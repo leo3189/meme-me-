@@ -33,21 +33,56 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H6g-8L-BIF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" id="fQV-u0-eZX"/>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G8a-DY-LqV">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T1s-zu-6II">
+                                <rect key="frame" x="188" y="120" width="38" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VMQ-dg-gMa">
+                                <rect key="frame" x="169.5" y="759" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="t6v-Vx-f4A" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="038-Fd-ioC"/>
+                            <constraint firstItem="H6g-8L-BIF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="698-wQ-4hg"/>
+                            <constraint firstItem="H6g-8L-BIF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CpB-Wl-TwN"/>
+                            <constraint firstItem="t6v-Vx-f4A" firstAttribute="top" secondItem="G8a-DY-LqV" secondAttribute="bottom" id="Cyk-eb-E8y"/>
                             <constraint firstItem="t6v-Vx-f4A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Jgt-Ac-xsP"/>
+                            <constraint firstItem="G8a-DY-LqV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VhS-9A-cnS"/>
+                            <constraint firstItem="T1s-zu-6II" firstAttribute="centerX" secondItem="H6g-8L-BIF" secondAttribute="centerX" id="bYh-V0-qps"/>
+                            <constraint firstItem="VMQ-dg-gMa" firstAttribute="centerX" secondItem="t6v-Vx-f4A" secondAttribute="centerX" id="fKu-Mc-Ao2"/>
                             <constraint firstItem="t6v-Vx-f4A" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fbM-wc-LnH"/>
+                            <constraint firstItem="T1s-zu-6II" firstAttribute="top" secondItem="H6g-8L-BIF" secondAttribute="bottom" constant="32" id="iuG-27-8TH"/>
+                            <constraint firstItem="G8a-DY-LqV" firstAttribute="top" secondItem="H6g-8L-BIF" secondAttribute="bottom" id="lVd-Bz-3Ef"/>
+                            <constraint firstItem="H6g-8L-BIF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mVC-jG-SBS"/>
+                            <constraint firstItem="t6v-Vx-f4A" firstAttribute="top" secondItem="VMQ-dg-gMa" secondAttribute="bottom" constant="33" id="tQ7-R4-f0b"/>
+                            <constraint firstItem="G8a-DY-LqV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tvF-Bx-a77"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bottomTextField" destination="VMQ-dg-gMa" id="RBo-Bl-3qm"/>
                         <outlet property="cameraBtn" destination="Fx7-Jy-epx" id="NlU-8m-FaE"/>
+                        <outlet property="pickImageView" destination="G8a-DY-LqV" id="rd4-Np-nCT"/>
+                        <outlet property="topTextField" destination="T1s-zu-6II" id="HnV-KR-RVl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
         </scene>
     </scenes>
 </document>
