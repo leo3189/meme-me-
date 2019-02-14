@@ -18,8 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6v-Vx-f4A">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6v-Vx-f4A" userLabel="Bottom Toolbar">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="kL6-Cs-3Dz"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="mwQ-gV-4GT"/>
                                     <barButtonItem systemItem="camera" id="Fx7-Jy-epx">
@@ -36,8 +39,11 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="boU-ii-qjj"/>
                                 </items>
                             </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H6g-8L-BIF">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H6g-8L-BIF" userLabel="Top Toolbar">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2hF-be-aTh"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem systemItem="action" id="fQV-u0-eZX"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="nM8-aH-6Ax"/>
@@ -48,39 +54,49 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T1s-zu-6II">
-                                <rect key="frame" x="188" y="154" width="38" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" allowsEditingTextAttributes="YES" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T1s-zu-6II">
+                                <rect key="frame" x="20" y="140" width="374" height="51"/>
                                 <attributedString key="attributedText">
                                     <fragment content="TOP">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="40" name="HelveticaNeue-CondensedBlack"/>
+                                            <font key="NSFont" size="41" name="HelveticaNeue-CondensedBlack"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="charWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VMQ-dg-gMa">
-                                <rect key="frame" x="170" y="717" width="75" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" allowsEditingTextAttributes="YES" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VMQ-dg-gMa">
+                                <rect key="frame" x="20" y="710" width="374" height="52"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="BOTTOM">
+                                        <attributes>
+                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="40" name="HelveticaNeue-CondensedBlack"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="t6v-Vx-f4A" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="038-Fd-ioC"/>
-                            <constraint firstItem="H6g-8L-BIF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="698-wQ-4hg"/>
-                            <constraint firstItem="H6g-8L-BIF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CpB-Wl-TwN"/>
-                            <constraint firstItem="t6v-Vx-f4A" firstAttribute="top" secondItem="G8a-DY-LqV" secondAttribute="bottom" id="Cyk-eb-E8y"/>
-                            <constraint firstItem="t6v-Vx-f4A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Jgt-Ac-xsP"/>
-                            <constraint firstItem="G8a-DY-LqV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VhS-9A-cnS"/>
-                            <constraint firstItem="t6v-Vx-f4A" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fbM-wc-LnH"/>
-                            <constraint firstItem="G8a-DY-LqV" firstAttribute="top" secondItem="H6g-8L-BIF" secondAttribute="bottom" id="lVd-Bz-3Ef"/>
-                            <constraint firstItem="H6g-8L-BIF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mVC-jG-SBS"/>
-                            <constraint firstItem="G8a-DY-LqV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tvF-Bx-a77"/>
+                            <constraint firstItem="t6v-Vx-f4A" firstAttribute="top" secondItem="G8a-DY-LqV" secondAttribute="bottom" id="633-QT-cIL"/>
+                            <constraint firstItem="VMQ-dg-gMa" firstAttribute="centerX" secondItem="t6v-Vx-f4A" secondAttribute="centerX" id="9Z9-HV-jsD"/>
+                            <constraint firstItem="G8a-DY-LqV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="BS3-GY-o1R"/>
+                            <constraint firstItem="H6g-8L-BIF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DrE-DZ-L9r"/>
+                            <constraint firstItem="t6v-Vx-f4A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IG2-gx-uKY"/>
+                            <constraint firstItem="T1s-zu-6II" firstAttribute="centerX" secondItem="H6g-8L-BIF" secondAttribute="centerX" id="M4A-gl-sy3"/>
+                            <constraint firstItem="T1s-zu-6II" firstAttribute="top" secondItem="H6g-8L-BIF" secondAttribute="bottom" constant="52" id="OAZ-qw-ytQ"/>
+                            <constraint firstItem="H6g-8L-BIF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ReI-Ci-jKk"/>
+                            <constraint firstItem="G8a-DY-LqV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VMj-CT-iVq"/>
+                            <constraint firstItem="H6g-8L-BIF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gRX-6i-HTO"/>
+                            <constraint firstItem="G8a-DY-LqV" firstAttribute="top" secondItem="H6g-8L-BIF" secondAttribute="bottom" id="jMn-Ln-aFH"/>
+                            <constraint firstItem="t6v-Vx-f4A" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="l9z-ht-KZm"/>
+                            <constraint firstItem="t6v-Vx-f4A" firstAttribute="top" secondItem="VMQ-dg-gMa" secondAttribute="bottom" constant="51" id="nZ2-Zc-6hg"/>
+                            <constraint firstItem="t6v-Vx-f4A" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="y0U-EB-cHn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
