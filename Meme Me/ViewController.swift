@@ -14,6 +14,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var pickImageView: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
+    @IBOutlet weak var shareBtn: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +34,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         cameraBtn.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        
+        shareBtn.isEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,18 +52,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         unsubscribeFromKeyboardNotifications()
     }
 
-    @IBAction func pickPicture(_ sender: Any) {
+    func pickPictureFrom(source: UIImagePickerController.SourceType) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
-        pickerController.sourceType = .photoLibrary
+        pickerController.sourceType = source
         present(pickerController, animated: true, completion: nil)
     }
     
     @IBAction func pickPictureFromCamera(_ sender: Any) {
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self
-        pickerController.sourceType = .camera
-        present(pickerController, animated: true, completion: nil)
+        pickPictureFrom(source: .camera)
+    }
+    
+    @IBAction func pickPictureFromAlbum(_ sender: Any) {
+        pickPictureFrom(source: .photoLibrary)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -110,6 +116,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.text == "TOP" || textField.text == "BOTTOM"{
+            textField.text = ""
+        }
     }
     
 }

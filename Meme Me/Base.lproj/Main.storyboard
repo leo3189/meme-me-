@@ -33,7 +33,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="riQ-C2-Pc7"/>
                                     <barButtonItem title="Album" id="7uJ-KO-4d4">
                                         <connections>
-                                            <action selector="pickPicture:" destination="BYZ-38-t0r" id="c9L-YK-HpQ"/>
+                                            <action selector="pickPictureFromAlbum:" destination="BYZ-38-t0r" id="9b2-am-k18"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="boU-ii-qjj"/>
@@ -43,32 +43,36 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" allowsEditingTextAttributes="YES" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VMQ-dg-gMa">
-                                <rect key="frame" x="118" y="628" width="139" height="50"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g96-l7-QBn">
+                                <rect key="frame" x="148" y="142" width="79" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="eG9-Iv-5GA"/>
+                                    <constraint firstAttribute="height" constant="50" id="b3r-DM-V1f"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" allowsEditingTextAttributes="YES" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T1s-zu-6II">
-                                <rect key="frame" x="20" y="154" width="374" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OKG-qr-2nh">
+                                <rect key="frame" x="104.66666666666669" y="636" width="166" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="JWp-NN-skO"/>
+                                </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="41"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="g96-l7-QBn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="54" id="0of-Fm-eSj"/>
                             <constraint firstItem="t6v-Vx-f4A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IG2-gx-uKY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OKG-qr-2nh" secondAttribute="bottom" constant="92" id="Iqk-SU-ipp"/>
                             <constraint firstItem="G8a-DY-LqV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cG4-Kw-Ckd"/>
-                            <constraint firstItem="VMQ-dg-gMa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="d0e-hm-qSH"/>
                             <constraint firstItem="G8a-DY-LqV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eWa-72-w3V"/>
                             <constraint firstItem="G8a-DY-LqV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="geQ-r6-nBm"/>
                             <constraint firstItem="t6v-Vx-f4A" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="l9z-ht-KZm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VMQ-dg-gMa" secondAttribute="bottom" constant="100" id="oN9-sv-bu0"/>
+                            <constraint firstItem="OKG-qr-2nh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mxS-ZB-NIV"/>
+                            <constraint firstItem="g96-l7-QBn" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tuj-yW-Q9r"/>
                             <constraint firstItem="t6v-Vx-f4A" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="y0U-EB-cHn"/>
                             <constraint firstItem="t6v-Vx-f4A" firstAttribute="top" secondItem="G8a-DY-LqV" secondAttribute="bottom" id="y7g-4C-WlS"/>
                         </constraints>
@@ -79,10 +83,11 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="OVn-SQ-0SG"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="bottomTextField" destination="VMQ-dg-gMa" id="xeM-PC-9sP"/>
+                        <outlet property="bottomTextField" destination="OKG-qr-2nh" id="eNi-c7-b4u"/>
                         <outlet property="cameraBtn" destination="Fx7-Jy-epx" id="NlU-8m-FaE"/>
                         <outlet property="pickImageView" destination="G8a-DY-LqV" id="rd4-Np-nCT"/>
-                        <outlet property="topTextField" destination="T1s-zu-6II" id="1Se-EC-a76"/>
+                        <outlet property="shareBtn" destination="Zmm-gy-4Hr" id="U3n-Rt-HDN"/>
+                        <outlet property="topTextField" destination="g96-l7-QBn" id="P19-eV-ypp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
