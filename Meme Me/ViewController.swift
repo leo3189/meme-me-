@@ -18,10 +18,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        topTextField.defaultTextAttributes = memeTextAttributes
-//        bottomTextField.defaultTextAttributes = memeTextAttributes
-
+        let memeTextAttributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.strokeColor: UIColor.black,
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+            NSAttributedString.Key.strokeWidth: -4.0
+        ]
         
+        topTextField.defaultTextAttributes = memeTextAttributes
+        bottomTextField.defaultTextAttributes = memeTextAttributes
+        
+        topTextField.delegate = self
+        bottomTextField.delegate = self
+
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
@@ -77,11 +86,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
-        view.frame.origin.y -= getKeyboardHeight(notification)
+        if bottomTextField.isFirstResponder {
+            view.frame.origin.y -= getKeyboardHeight(notification)
+        }
     }
     
     @objc func keyboardWillHide(_ notification:Notification) {
-        view.frame.origin.y += getKeyboardHeight(notification)
+        if bottomTextField.isFirstResponder {
+           view.frame.origin.y += getKeyboardHeight(notification)
+        }
     }
 
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
@@ -92,6 +105,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 }
