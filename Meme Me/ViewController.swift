@@ -18,8 +18,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
         NSAttributedString.Key.foregroundColor: UIColor.white,
+<<<<<<< HEAD
         NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
         NSAttributedString.Key.strokeWidth: 5
+=======
+        NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 100)!,
+        NSAttributedString.Key.strikethroughColor: UIColor.black
+>>>>>>> 598331a6f446b9add4f26ea09ea51375c274b4de
     ]
     
     override func viewDidLoad() {

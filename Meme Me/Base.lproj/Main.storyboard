@@ -48,14 +48,16 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T1s-zu-6II">
-                                <rect key="frame" x="188" y="120" width="38" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T1s-zu-6II">
+                                <rect key="frame" x="188" y="154" width="38" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VMQ-dg-gMa">
-                                <rect key="frame" x="169.5" y="759" width="75" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VMQ-dg-gMa">
+                                <rect key="frame" x="170" y="717" width="75" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                         </subviews>
@@ -67,13 +69,9 @@
                             <constraint firstItem="t6v-Vx-f4A" firstAttribute="top" secondItem="G8a-DY-LqV" secondAttribute="bottom" id="Cyk-eb-E8y"/>
                             <constraint firstItem="t6v-Vx-f4A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Jgt-Ac-xsP"/>
                             <constraint firstItem="G8a-DY-LqV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VhS-9A-cnS"/>
-                            <constraint firstItem="T1s-zu-6II" firstAttribute="centerX" secondItem="H6g-8L-BIF" secondAttribute="centerX" id="bYh-V0-qps"/>
-                            <constraint firstItem="VMQ-dg-gMa" firstAttribute="centerX" secondItem="t6v-Vx-f4A" secondAttribute="centerX" id="fKu-Mc-Ao2"/>
                             <constraint firstItem="t6v-Vx-f4A" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fbM-wc-LnH"/>
-                            <constraint firstItem="T1s-zu-6II" firstAttribute="top" secondItem="H6g-8L-BIF" secondAttribute="bottom" constant="32" id="iuG-27-8TH"/>
                             <constraint firstItem="G8a-DY-LqV" firstAttribute="top" secondItem="H6g-8L-BIF" secondAttribute="bottom" id="lVd-Bz-3Ef"/>
                             <constraint firstItem="H6g-8L-BIF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mVC-jG-SBS"/>
-                            <constraint firstItem="t6v-Vx-f4A" firstAttribute="top" secondItem="VMQ-dg-gMa" secondAttribute="bottom" constant="33" id="tQ7-R4-f0b"/>
                             <constraint firstItem="G8a-DY-LqV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tvF-Bx-a77"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
