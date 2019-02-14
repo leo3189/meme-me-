@@ -130,6 +130,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func shareBtnTapped(_ sender: Any) {
+        let memedImage = generateMemedImage()
         let activityController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         activityController.completionWithItemsHandler = { activity, success, items, error in
             
@@ -160,7 +161,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func save() {
         let memedImage = generateMemedImage()
-        _ = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeImgView.image, memeImage: memedImage)
+        _ = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: pickImageView.image, memeImage: memedImage)
     }
     
     
