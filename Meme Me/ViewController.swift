@@ -74,7 +74,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
             pickImageView.image = image
-            
+            shareBtn.isEnabled = true
             dismiss(animated: true, completion: nil)
         }
     }
@@ -124,5 +124,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    @IBAction func cancelBtnTapped(_ sender: Any) {
+        topTextField.text = "TOP"
+        bottomTextField.text = "BOTTOM"
+        pickImageView.image = nil
+        shareBtn.isEnabled = false
+    }
 }
 
