@@ -35,13 +35,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         
-        
+        shareBtn.isEnabled = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
         cameraBtn.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        
-        shareBtn.isEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -130,5 +128,42 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         pickImageView.image = nil
         shareBtn.isEnabled = false
     }
+    
+    @IBAction func shareBtnTapped(_ sender: Any) {
+        let activityController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        activityController.completionWithItemsHandler = { activity, success, items, error in
+            
+            if success {
+                self.save()
+            }
+            
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        present(activityController, animated: true, completion: nil)
+    }
+    
+    func generateMemedImage() -> UIImage {        
+//        navBar.isHidden = true
+//        toolBar.isHidden = true
+       
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+//        navBar.isHidden = false
+//        toolBar.isHidden = false
+        
+        return memedImage
+    }
+    
+    func save() {
+        let memedImage = generateMemedImage()
+        _ = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeImgView.image, memeImage: memedImage)
+    }
+    
+    
 }
+
 

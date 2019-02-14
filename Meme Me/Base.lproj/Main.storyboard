@@ -79,7 +79,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Meme Me" largeTitleDisplayMode="always" id="3Z5-61-VGH">
-                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="Zmm-gy-4Hr"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="Zmm-gy-4Hr">
+                            <connections>
+                                <action selector="shareBtnTapped:" destination="BYZ-38-t0r" id="bNV-AM-DZE"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="OVn-SQ-0SG">
                             <connections>
                                 <action selector="cancelBtnTapped:" destination="BYZ-38-t0r" id="2eE-j0-lEM"/>
