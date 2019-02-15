@@ -15,6 +15,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var shareBtn: UIBarButtonItem!
+    @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var navBar: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         topTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.defaultTextAttributes = memeTextAttributes
+        
+        topTextField.textAlignment = .center
+        bottomTextField.textAlignment = .center
         
         topTextField.delegate = self
         bottomTextField.delegate = self
@@ -145,16 +150,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func generateMemedImage() -> UIImage {        
-//        navBar.isHidden = true
-//        toolBar.isHidden = true
+        toolBar.isHidden = true
+        self.navigationController?.isNavigationBarHidden = true
        
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-//        navBar.isHidden = false
-//        toolBar.isHidden = false
+        toolBar.isHidden = true
+        self.navigationController?.isNavigationBarHidden = true
         
         return memedImage
     }
