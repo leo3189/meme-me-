@@ -19,7 +19,7 @@ class MemeTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-     
+        self.tableView.reloadData()
         
     }
 
@@ -40,6 +40,8 @@ class MemeTableVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
+        let item = memes[indexPath.row]
+        cell.imageView?.image = item.memeImage
 
         return cell
     }
