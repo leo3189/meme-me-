@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B30C619C2219CBD500A26755 /* MemeTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30C619B2219CBD500A26755 /* MemeTVCell.swift */; };
 		B3B636932216318B00018C69 /* Meme Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B636922216318B00018C69 /* Meme Model.swift */; };
 		D71732C92216F38200CF6276 /* MemeTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71732C82216F38200CF6276 /* MemeTableVC.swift */; };
 		D71732CB2216F3A000CF6276 /* MemeCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71732CA2216F3A000CF6276 /* MemeCollectionVC.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B30C619B2219CBD500A26755 /* MemeTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeTVCell.swift; sourceTree = "<group>"; };
 		B3B636922216318B00018C69 /* Meme Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Meme Model.swift"; sourceTree = "<group>"; };
 		D71732C82216F38200CF6276 /* MemeTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeTableVC.swift; sourceTree = "<group>"; };
 		D71732CA2216F3A000CF6276 /* MemeCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeCollectionVC.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				B3B636922216318B00018C69 /* Meme Model.swift */,
 				D71732C82216F38200CF6276 /* MemeTableVC.swift */,
 				D71732CA2216F3A000CF6276 /* MemeCollectionVC.swift */,
+				B30C619B2219CBD500A26755 /* MemeTVCell.swift */,
 			);
 			path = "Meme Me";
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7A994132211A6C900867DEC /* ViewController.swift in Sources */,
+				B30C619C2219CBD500A26755 /* MemeTVCell.swift in Sources */,
 				D71732C92216F38200CF6276 /* MemeTableVC.swift in Sources */,
 				D71732CB2216F3A000CF6276 /* MemeCollectionVC.swift in Sources */,
 				B3B636932216318B00018C69 /* Meme Model.swift in Sources */,
@@ -297,6 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ECHZT9QDZ4;
 				INFOPLIST_FILE = "Meme Me/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,6 +320,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ECHZT9QDZ4;
 				INFOPLIST_FILE = "Meme Me/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

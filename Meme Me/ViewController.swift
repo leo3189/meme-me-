@@ -138,14 +138,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let memedImage = generateMemedImage()
         let activityController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         activityController.completionWithItemsHandler = { activity, success, items, error in
-            
             if success {
                 self.save()
+                self.dismiss(animated: true, completion: nil)
             }
-            
-            self.dismiss(animated: true, completion: nil)
         }
-        
         present(activityController, animated: true, completion: nil)
     }
     
@@ -158,8 +155,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        toolBar.isHidden = true
-        self.navigationController?.isNavigationBarHidden = true
+        toolBar.isHidden = false
+        self.navigationController?.isNavigationBarHidden = false
         
         return memedImage
     }
@@ -171,6 +168,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
+        
+        print("Memes \(appDelegate.memes)")
+//        return meme
     }
     
     

@@ -12,6 +12,8 @@ private let reuseIdentifier = "Cell"
 
 class MemeCollectionVC: UICollectionViewController {
     
+    @IBOutlet weak var memedImage: UIImageView!
+    
     var memes: [Meme]! {
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
